@@ -20,12 +20,12 @@ USER $APP_USER
 
 # build specific commit
 RUN git clone https://github.com/DNSCrypt/dnscrypt-proxy.git . \
-    && git checkout 796a7f6d31737adf352a4711b9983acc90c72daa && git reset --hard
+    && git checkout 0ca90dd8cc41d1a77c48c28827a42b541e147beb && git reset --hard
 
 WORKDIR $APP_HOME/build/dnscrypt-proxy
 
 # Enable and adjust git commit, when you build specific commit above
-RUN sed -i -E 's/[0-9]{1}.[0-9]{1}.[0-9]{2}-[a-z]{4}[0-9]{1}/&-git-796a7f6/' main.go
+RUN sed -i -E 's/[0-9]{1}.[0-9]{1}.[0-9]{2}-[a-z]{4}[0-9]{1}/&-git-0ca90dd/' main.go
 
 ENV CGO_ENABLED=0
 ENV GOOS=linux
