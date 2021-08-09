@@ -10,6 +10,7 @@ ipv6_servers = false
 dnscrypt_servers = false
 doh_servers = false
 odoh_servers = true
+log_files_max_size = 0
 
 # Enable in case you want to load the public odoh server list
 # If enabled, enable the "pairs" in the routes
@@ -20,8 +21,9 @@ odoh_servers = true
 #   cache_file = 'odoh.md'
 
 # Enable logging
-# [query_log]
-#  file = 'query.log'
+[query_log]
+#  file = '/var/log/query.log'
+file = '/dev/stdout'
 
 # Static configured odoh target and relay servers
 # You can only enable 1 stamp per static entry

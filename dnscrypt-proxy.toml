@@ -1,8 +1,10 @@
 server_names = ['odohtarget', 'odohrelay']
 listen_addresses = ['0.0.0.0:53']
+log_files_max_size = 0
 
 [query_log]
-file = 'query.log'
+# file = '/var/log/query.log'
+file = '/dev/stdout'
 
 [static]
   [static.'odohtarget']
