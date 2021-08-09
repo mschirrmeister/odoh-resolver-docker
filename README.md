@@ -15,11 +15,11 @@ Below are a few examples on how to run the container.
 
 Run the container with a build-in configuration.
 
-    docker run -it -d \
+    docker run -it - \
       --name odoh-resolver \
       -p 53:53/tcp \
       -p 53:53/udp \
-      odoh-resolver:latest
+      mschirrmeister/odoh-resolver:latest
 
 Run the container with own custom configuration.
 
@@ -28,5 +28,5 @@ Run the container with own custom configuration.
       -p 53:53/tcp \
       -p 53:53/udp \
       -v /Users/marco/MyData/git/public/odoh-resolver-docker/odoh-proxied.toml:/config/odoh-proxied.toml \
-      odoh-resolver:latest -loglevel 1 -config /config/odoh-proxied.toml -pidfile /var/run/odoh-proxied.pidfile
+      mschirrmeister/odoh-resolver:latest -loglevel 1 -config /config/odoh-proxied.toml -pidfile /var/run/odoh-proxied.pidfile
 
