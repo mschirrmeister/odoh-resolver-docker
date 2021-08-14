@@ -13,12 +13,17 @@ odoh_servers = true
 log_files_max_size = 0
 
 # Enable in case you want to load the public odoh server list
-# If enabled, enable the "pairs" in the routes
+# If enabled, enable the "pairs" in the routes section
 # [sources]
-#   [sources.'odoh']
-#   urls = ['https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v3/odoh.md', 'https://download.dnscrypt.info/resolvers-list/v3/odoh.md']
+#   [sources.'odoh-relays']
+#   urls = ['https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v3/odoh-relays.md', 'https://download.dnscrypt.info/resolvers-list/v3/odoh-relays.md']
 #   minisign_key = 'RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3'
-#   cache_file = 'odoh.md'
+#   cache_file = 'odoh-relays.md'
+#
+#   [sources.'odoh-servers']
+#   urls = ['https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v3/odoh-servers.md', 'https://download.dnscrypt.info/resolvers-list/v3/odoh-servers.md']
+#   minisign_key = 'RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3'
+#   cache_file = 'odoh-servers.md'
 
 # Enable logging
 [query_log]

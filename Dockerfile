@@ -11,21 +11,21 @@ USER $APP_USER
 # RUN git clone https://github.com/DNSCrypt/dnscrypt-proxy.git .
 
 # build stable release
-# RUN git clone https://github.com/DNSCrypt/dnscrypt-proxy.git .
-# RUN git checkout tags/2.0.45 -b 2.0.45
+# RUN git clone https://github.com/DNSCrypt/dnscrypt-proxy.git . \
+#     && git checkout tags/2.0.45 -b 2.0.45
 # or
-# RUN git clone --depth 1 -b 2.0.45 https://github.com/DNSCrypt/dnscrypt-proxy.git .
+RUN git clone --depth 1 -b 2.1.0 https://github.com/DNSCrypt/dnscrypt-proxy.git .
 # or
 # RUN git clone https://github.com/DNSCrypt/dnscrypt-proxy.git --branch 2.0.46-beta3 .
 
 # build specific commit
-RUN git clone https://github.com/DNSCrypt/dnscrypt-proxy.git . \
-    && git checkout 0ca90dd8cc41d1a77c48c28827a42b541e147beb && git reset --hard
+# RUN git clone https://github.com/DNSCrypt/dnscrypt-proxy.git . \
+#     && git checkout 0ca90dd8cc41d1a77c48c28827a42b541e147beb && git reset --hard
 
 WORKDIR $APP_HOME/build/dnscrypt-proxy
 
 # Enable and adjust git commit, when you build specific commit above
-RUN sed -i -E 's/[0-9]{1}.[0-9]{1}.[0-9]{2}-[a-z]{4}[0-9]{1}/&-git-0ca90dd/' main.go
+# RUN sed -i -E 's/[0-9]{1}.[0-9]{1}.[0-9]{2}-[a-z]{4}[0-9]{1}/&-git-0ca90dd/' main.go
 
 ENV CGO_ENABLED=0
 ENV GOOS=linux
